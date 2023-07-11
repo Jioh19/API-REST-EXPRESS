@@ -12,8 +12,8 @@ app.get("/api/jugadores", (req, res) => {
 });
 
 //* Verifica que el ID sea válido
-app.get("/api/jugadores/:idJugador", (req, res) => {
-	const id = req.params.idJugador - 1;
+app.get("/api/jugadores/:id", (req, res) => {
+	const id = req.params.id - 1;
 	const jugador = jugadores.listaJugadores[id];
 	if (jugador === undefined) {
 		res.statusCode = 404;

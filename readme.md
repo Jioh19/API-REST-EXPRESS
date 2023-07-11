@@ -1,12 +1,18 @@
 CUE: IMPLEMENTACIÓN DE UNA API REST (I)
+
 REBOUND EXERCISE: CREANDO UNA API REST CON NODE.JS Y EXPRESS
+
 Para resolver este ejercicio, anteriormente debe haber revisado la lectura y los videos del CUE: API REST I.
+
 EJERCICIO:
+
 Desarrolla una API REST en backend con Node.JS y Express, que permita gestionar un conjunto de
 jugadores de fútbol, los cuales contienen los siguientes atributos: id, nombre, posición.
 Los endpoint tienen la siguiente estructura:
 Ruta Verbo HTTP Descripción
-/api/jugadores GET Listado de todos los jugadores.
+
+/api/jugadores GET 
+Listado de todos los jugadores.
 
 ```js
 app.get("/api/jugadores", (req, res) => {
@@ -17,8 +23,8 @@ app.get("/api/jugadores", (req, res) => {
 /api/jugadores/:id GET Datos del jugador según id.
 
 ```js
-app.get("/api/jugadores/:idJugador", (req, res) => {
-	const id = req.params.idJugador - 1;
+app.get("/api/jugadores/:id", (req, res) => {
+	const id = req.params.id - 1;
 	const jugador = jugadores.listaJugadores[id];
 	if (jugador === undefined) {
 		res.statusCode = 404;
